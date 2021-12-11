@@ -13,7 +13,8 @@ class SplashActivity : AppCompatActivity() {
 
         //delay the splash screen before move to the login screen
         Handler(Looper.myLooper()!!).postDelayed({
-            finish() //to remove the splash activity from memory
+            // finish() to remove the splash activity from memory (destroy) before move to login screen
+            finish()
             //move to login screen
             val theintent = Intent(this,LoginActivity::class.java)
             startActivity(theintent)
