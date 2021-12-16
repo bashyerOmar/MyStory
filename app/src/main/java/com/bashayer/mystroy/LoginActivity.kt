@@ -18,7 +18,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
          conncet_views()
          login()
 
@@ -57,6 +56,8 @@ class LoginActivity : AppCompatActivity() {
                 if (flag == false ){ //login failed
                     Toast.makeText(this, "Login failed", Toast.LENGTH_LONG).show()
                 }else{
+                    //destroy login screen before move to main activity
+                    finish()
                     //move to the main activity after login screen
                     val intent= Intent(this,MainActivity::class.java)
                     intent.putExtra("email",EntireUser.Email)
